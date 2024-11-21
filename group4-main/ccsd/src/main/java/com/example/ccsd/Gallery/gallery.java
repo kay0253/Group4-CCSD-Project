@@ -93,7 +93,7 @@ public class Gallery{
         return galleryImage;
     }
 
-    public void setImage(String galleryImage) {
+    public void setgalleryImage(String galleryImage) {
         this.galleryImage = galleryImage;
     }
 

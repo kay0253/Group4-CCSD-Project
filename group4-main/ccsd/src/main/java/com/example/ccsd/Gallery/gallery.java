@@ -6,8 +6,9 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "Gallery")
 // ERROR HERE CHECK!
-
+//problem solved
 public class Gallery{
     @Id
     private String id;

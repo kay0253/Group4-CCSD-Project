@@ -1,9 +1,14 @@
-package com.example.ccsd.products;
+package com.example.ccsd.Products;
 import java.util.Date;
 import java.util.List;
 
-public class products {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "products")
+public class Products {
+    @Id
+    private String id;
     private String productTitle;
     private String productsSlug;
     private Date productDate;
@@ -14,7 +19,10 @@ public class products {
     private String productImage;
     private String productsLongDescription;
 
-    public products(String productTitle, String productSlug, Date productDate, String productStatus, String productPlace, 
+    // Constructor
+    public Products() {}
+
+    public Products(String productTitle, String productSlug, Date productDate, String productStatus, String productPlace, 
     List<String> productTags, String productDescription, String productImage, String productsLongDescription) {
         this.productTitle = productTitle;
         this.productsSlug = productSlug;
@@ -27,6 +35,15 @@ public class products {
         this.productsLongDescription = productsLongDescription;
     }
 
+    //Getters and Setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     public String getproductTitle() {
         return productTitle;
     }
@@ -71,7 +88,7 @@ public class products {
         return productTags;
     }
 
-    public void setTags(List<String> productTags) {
+    public void setproductTags(List<String> productTags) {
         this.productTags = productTags;
     }
 
@@ -79,7 +96,7 @@ public class products {
         return productDescription;
     }
 
-    public void setDescription(String productDescription) {
+    public void setproductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
 
@@ -87,7 +104,7 @@ public class products {
         return productImage;
     }
 
-    public void setImage(String productImage) {
+    public void setproductImage(String productImage) {
         this.productImage = productImage;
     }
 

@@ -1,88 +1,100 @@
-package com.example.ccsd.gallery;
+package com.example.ccsd.Gallery;
 
 import java.util.Date;
 import java.util.List;
 
-public class gallery{
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-    private String title;
-    private Date date;
-    private String status;
-    private String productsPlace;
-    private List<String> tags;
-    private String description;
-    private String image;
-    private String productsLongDescription;
+@Document(collection = "gallery")
+public class Gallery{
+    @Id
+    private String id;
+    private String galleryTitle;
+    private String gallerySlug;
+    private Date galleryDate;
+    private String galleryStatus;
+    private List<String> galleryTags;
+    private String galleryDescription;
+    private String galleryImage;
 
-    public String getTitle() {
-        return title;
+    //Constructors
+    public Gallery() {}
+
+    public Gallery(String galleryTitle, String gallerySlug, Date galleryDate, String galleryStatus, 
+    List<String> galleryTags, String galleryDescription, String galleryImage) {
+        this.galleryTitle = galleryTitle;
+        this.gallerySlug = gallerySlug;
+        this.galleryDate = galleryDate;
+        this.galleryStatus = galleryStatus;
+        this.galleryTags = galleryTags;
+        this.galleryDescription = galleryDescription;
+        this.galleryImage = galleryImage;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    // Getters and Setters
+    public String getId() {
+        return id;
     }
 
-    public String getproductsSlug() {
-        return productsSlug;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setproductsSlug(String productsSlug) {
-        this.productsSlug = productsSlug;
+    public String getgalleryTitle() {
+        return galleryTitle;
     }
 
-    public Date getDate() {
-        return date;
+    public void setgalleryTitle(String galleryTitle) {
+        this.galleryTitle = galleryTitle;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public String getgallerySlug() {
+        return gallerySlug;
     }
 
-    public String getStatus() {
-        return status;
+    public void setgallerySlug(String gallerySlug) {
+        this.gallerySlug = gallerySlug;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public Date getgalleryDate() {
+        return galleryDate;
     }
 
-    public String getproductsPlace() {
-        return productsPlace;
+    public void setgalleryDate(Date galleryDate) {
+        this.galleryDate = galleryDate;
     }
 
-    public void setproductsPlace(String productsPlace) {
-        this.productsPlace = productsPlace;
+    public String getgalleryStatus() {
+        return galleryStatus;
     }
 
-    public List<String> getTags() {
-        return tags;
+    public void setgalleryStatus(String galleryStatus) {
+        this.galleryStatus = galleryStatus;
     }
 
-    public void setTags(List<String> tags) {
-        this.tags = tags;
+    public List<String> getgalleryTags() {
+        return galleryTags;
     }
 
-    public String getDescription() {
-        return description;
+    public void setgalleryTags(List<String> galleryTags) {
+        this.galleryTags = galleryTags;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getgalleryDescription() {
+        return galleryDescription;
     }
 
-    public String getImage() {
-        return image;
+    public void setgalleryDescription(String galleryDescription) {
+        this.galleryDescription = galleryDescription;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public String getgalleryImage() {
+        return galleryImage;
     }
 
-    public String getproductsLongDescription() {
-        return productsLongDescription;
+    public void setImage(String galleryImage) {
+        this.galleryImage = galleryImage;
     }
 
-    public void setproductsLongDescription(String productsLongDescription) {
-        this.productsLongDescription = productsLongDescription;
-    }
 }

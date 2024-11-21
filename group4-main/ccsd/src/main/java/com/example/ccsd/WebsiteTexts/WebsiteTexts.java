@@ -6,20 +6,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class WebsiteTexts {
 
-// Text Class
+
 class Text {
-    // Encapsulating the name and age
-    // only approachable and used using
-    // methods defined
+
     @Id
-    private String id;
+    //private String id;
     private String titleText;
     private String headerText;
     private String footerText;
     private String bodyText;
     private long contactNum;
 
-    
+    //Constructor
+    public Text(String titleText, String headerText, String footerText, String bodyText, long contactNum){
+        this.titleText = titleText;
+        this.headerText = headerText;
+        this.footerText = footerText;
+        this.bodyText = bodyText;
+        this.contactNum =contactNum;
+    }
 
     public String getTitleText() { return titleText; }
     public void setTitleText(String titleText) { this.titleText = titleText; }
@@ -36,17 +41,17 @@ class Text {
     public long getContactNum() { return contactNum; }
     public void setContactNum(long contactNum) { this.contactNum = contactNum; }
 }
-
+}
 
 // Driver Class
-public class Main {
+/*public class Main {
     // main function
     public void main(String[] args)
     {
         // person object created
         Text text = new Text();
         text.setTitleText("Experience the world of creativity");
-        text.setHeaderText("Global.AI");
+        text.setHeaderText("Global.Ai");
         text.setFooterText("Interested? Contact US | In Collaboration with :");
         text.setBodyText("null");
         text.setContactNum(1123456789);
@@ -58,9 +63,6 @@ public class Main {
         System.out.println(text.getFooterText());
         System.out.println(text.getBodyText());
         System.out.println(text.getContactNum());
-
-
-
     }
 }
-}
+}*/

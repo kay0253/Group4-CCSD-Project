@@ -12,30 +12,30 @@ public class ProductsService {
     private ProductsRepository productsRepository;
 
     // Getting all Productss
-    public List<Products> getAllProducts() {
+    public List<products> getAllProducts() {
         return productsRepository.findAll();
     }
 
     // Getting single boks
-    public Optional<Products> getProductsById(String id) {
+    public Optional<products> getProductsById(String id) {
         return productsRepository.findById(id);
     }
 
     // Creating new data in repository
 
-    public Products addProducts(Products products) {
+    public products addProducts(products products) {
         return productsRepository.save(products);
     }
 
     // Updating the Products
 
-    public Products updateProducts(String id, Products productsDetails) {
-        Optional<Products> productsOpt = productsRepository.findById(id);
+    public products updateProducts(String id, products productsDetails) {
+        Optional<products> productsOpt = productsRepository.findById(id);
         if (productsOpt.isPresent()) {
 
             // Get from database
 
-            Products products = productsOpt.get();
+            products products = productsOpt.get();
             products.setproductTitle(productsDetails.getproductTitle());
             products.setproductsSlug(productsDetails.getproductsSlug());
             products.setproductDate(productsDetails.getproductDate());

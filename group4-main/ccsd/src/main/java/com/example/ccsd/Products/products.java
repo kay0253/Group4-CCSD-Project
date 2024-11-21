@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "products")
-public class Products {
+public class products {
     @Id
     private String id;
     private String productTitle;
@@ -20,9 +20,9 @@ public class Products {
     private String productsLongDescription;
 
     // Constructor
-    public Products() {}
+    public products() {}
 
-    public Products(String productTitle, String productSlug, Date productDate, String productStatus, String productPlace, 
+    public products(String productTitle, String productSlug, Date productDate, String productStatus, String productPlace, 
     List<String> productTags, String productDescription, String productImage, String productsLongDescription) {
         this.productTitle = productTitle;
         this.productsSlug = productSlug;

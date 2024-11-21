@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "gallery")
-public class Gallery{
+public class gallery{
     @Id
     private String id;
     private String galleryTitle;
@@ -19,9 +19,9 @@ public class Gallery{
     private String galleryImage;
 
     //Constructors
-    public Gallery() {}
+    public gallery() {}
 
-    public Gallery(String galleryTitle, String gallerySlug, Date galleryDate, String galleryStatus, 
+    public gallery(String galleryTitle, String gallerySlug, Date galleryDate, String galleryStatus, 
     List<String> galleryTags, String galleryDescription, String galleryImage) {
         this.galleryTitle = galleryTitle;
         this.gallerySlug = gallerySlug;

@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Gallery")
+@Document(collection = "gallery")
+// ERROR HERE CHECK!
+
 public class Gallery{
     @Id
     private String id;

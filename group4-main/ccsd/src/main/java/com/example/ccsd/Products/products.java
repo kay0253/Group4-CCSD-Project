@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "products")
-// error here!
+@Document(collection = "Products")
+// ERROR HERE PLS CHECK!!!
+//problem solved
+
 public class Products {
     @Id
     private String id;
@@ -121,6 +123,6 @@ public class Products {
 
     }
 
-    
+
 }
 

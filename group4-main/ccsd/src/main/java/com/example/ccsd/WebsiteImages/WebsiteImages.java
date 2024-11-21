@@ -58,17 +58,4 @@ public class WebsiteImages {
         this.imageType = imageType;
     }
 
-    public static void main(String[] args) {
-        WebsiteImages images = new WebsiteImages();
-        images.setImageUrl("");
-        images.setWidth(0);
-        images.setHeight(0);
-        images.setImageType("");
-        System.out.println("Url: " + images.getImageUrl());
-        System.out.println("Width: " + images.getWidth());
-        System.out.println("Height: " + images.getHeight());
-        System.out.println("Type: " + images.getImageType());
-
-    }
-
 }

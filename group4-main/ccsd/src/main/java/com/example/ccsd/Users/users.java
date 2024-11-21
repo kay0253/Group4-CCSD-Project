@@ -1,15 +1,37 @@
 package com.example.ccsd.Users;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+
+@Document(collection = "users")
 public class users {
     
+    @Id
+    private String id;
     private String FirstName;
     private String LastName;
-    private long PhoneNumber;
+    private String PhoneNumber;
     private String EmailAddress;
     private String HomeAddress;
     private String Password;
     private String ProfilePicture;
 
+    public users() {}
+
+    public users(String FirstName, String LastName, String PhoneNumber, String EmailAddress, String HomeAddress, String Password, String ProfilePicture) {
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.PhoneNumber = PhoneNumber;
+        this.EmailAddress = EmailAddress;
+        this.HomeAddress = HomeAddress;
+        this.Password = Password;
+        this.ProfilePicture =ProfilePicture;
+
+    }
+        
+    public String getId() {
+        return id;
+    }
 
     public String getFirstName() {
         return FirstName;
@@ -27,16 +49,12 @@ public class users {
         this.LastName = LastName;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return PhoneNumber;
     }
 
-    public void setPhoneNumber(long PhoneNumber) {
-        if (PhoneNumber > 0){
-            this.PhoneNumber = PhoneNumber;
-        } else {
-            System.out.println("Phone Number cannot be negative");
-        }
+    public void setPhoneNumber(String PhoneNumber) {
+        this.PhoneNumber = PhoneNumber;
     }
 
     public String getEmailAddress() {
@@ -69,29 +87,6 @@ public class users {
 
     public void setProfilePicture(String ProfilePicture) {
         this.ProfilePicture =ProfilePicture;
-    }
-
-    public static void main(String[] args) {
-        users person = new users();
-        person.setFirstName("Syafig");
-        person.setLastName("Aiman");
-        person.setPhoneNumber(0112345667);
-        person.setEmailAddress("syafiqaiman@gmail.com");
-        person.setHomeAddress("Laman Norsham");
-        person.setPassword("SyafiqAiman123");
-        person.setProfilePicture("Link");
-
-
-
-        System.out.println("First Name: " + person.getFirstName());
-        System.out.println("Last Name: " + person.getLastName());
-        System.out.println("Phone Number: " + person.getLastName());
-        System.out.println("Email Address: " + person.getEmailAddress());
-        System.out.println("Home Address: " + person.getHomeAddress());
-        System.out.println("Password: " + person.getPassword());
-        System.out.println("Profile Picture: " + person.getProfilePicture());
-
-
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.ccsd.Gallery;
+package com.example.ccsd.Users;
 
 import java.util.List;
 
@@ -14,41 +14,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/Gallery")
-public class GalleryController {
+@RequestMapping("/api/users")
+public class usersController {
     
+
     @Autowired
-    private GalleryService galleryService;
+    private usersService UsersService;
 
     @GetMapping
-    public List<Gallery> getAllGallery() {
-        return galleryService.getAllGallery();
+    public List<users> getAlluser() {
+        return UsersService.getAlluser();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Gallery> getGalleryById(@PathVariable String id) {
-        return galleryService.getGalleryById(id)
+    public ResponseEntity<users> getusersById(@PathVariable String id) {
+        return UsersService.getusersById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Gallery addGallery(@RequestBody Gallery gallery) {
-        return galleryService.addGallery(gallery);
+    public users addusers(@RequestBody users Users) {
+        return UsersService.addusers(Users);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Gallery> updateGallery(@PathVariable String id, @RequestBody Gallery galleryDetails) {
-        Gallery updatedGallery = galleryService.updateGallery(id, galleryDetails);
-        if (updatedGallery != null) {
-            return ResponseEntity.ok(updatedGallery);
+    public ResponseEntity<users> updateusers(@PathVariable String id, @RequestBody users UsersDetails) {
+        users updatedusers = UsersService.updateusers(id, UsersDetails);
+        if (updatedusers != null) {
+            return ResponseEntity.ok(updatedusers);
         }
         return ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteGallery(@PathVariable String id) {
-        galleryService.deleteGallery(id);
+    public ResponseEntity<Void> deleteusers(@PathVariable String id) {
+        UsersService.deleteusers(id);
         return ResponseEntity.noContent().build();
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "products")
+// ERROR HERE PLS CHECK!!!
 public class Products {
     @Id
     private String id;

@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Products")
 // ERROR HERE PLS CHECK!!!
 //problem solved
+
 public class Products {
     @Id
     private String id;
